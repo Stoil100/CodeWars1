@@ -1,15 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Monoton&family=Press+Start+2P&display=swap');
 *{
     margin:0;
     padding:0;
+    font-family:'Press Start 2P', cursive;
 }
-.mainBox{
-    width:100vw;
-    height:100vh;
-    display:flex;
-    flex-direction:row;
-    justify-content:space-evenly;
-    align-items:center;
-     background: linear-gradient(
+
+h3{
+    font-size:3vw;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(
     to left,
     #252525 0%,
     #252525 50%,
@@ -17,18 +23,64 @@
     #34ebd8 100%
   );
 }
+.transform{
+    transition: all 0.5s;
+}
+.align-left {
+    float: left;
+    margin-right: 20px;
+  }
+
+  .align-right {
+    float: right;
+    margin-left: 20px;
+  }
+  .slide-in {
+    opacity: 0;
+  }
+
+  .align-left.slide-in {
+    transform: translateX(-30%) scale(0.25);
+  }
+  
+  .align-right.slide-in {
+    transform: translateX(30%) scale(0.25);
+  }
+
+  .slide-in.active {
+    opacity: 1;
+    transform: translateX(0%) scale(1);
+  }
+.mainBox{
+    width:100%;
+    height:100%;
+    display:flex;
+    flex-direction:row;
+    justify-content:space-evenly;
+    align-items:center;
+}
 .mainText{
+    color:#252525;
     flex:1;
     text-align:center;
-    width:33%;
     order:1;
 }
-#picture{
+.pictureAndName{
+    display:flex;
     flex:1;
-    max-width: 100%;
-      height: auto;
-    clip-path: circle();
     order:2;
+    text-align:center;
+    flex-direction:column;
+}
+#picture{
+    width: 100%;
+    height: auto;
+    clip-path: circle();
+    order:1;
+}
+#name{
+    order:2;
+    color:white;
 }
 .otherText{
     flex:1;
@@ -37,24 +89,37 @@
      color:   #34ebd8;
 }
 
-@media (max-width:450px){
-    .mainBox{
-        flex-direction:column;
-        justify-content: center;
+@media (max-width:650px){
+    body{
         background: linear-gradient(
             to top,
             #252525 0%,
-            #252525 70%,
-            #34ebd8 70%,
+            #252525 100%,
+            #34ebd8 90%,
             #34ebd8 100%
       );
     }
-    #picture{
-        height: auto;
+    h1{
+    font-size:7vw;
+    }
+    h3{
+    font-size:5vw;
+    }
+    .mainBox{
+        flex-direction:column;
+        justify-content: center;
+    }
+    .pictureAndName{
         order:1;
     }
     .mainText{
         order:2;
         color:white;
+    }
+    #picture{
+        order:2;
+    }
+    #name{
+        order:1;
     }
 }
