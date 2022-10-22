@@ -26,15 +26,7 @@ body{
 .transform{
     transition: all 0.5s;
 }
-.align-left {
-    float: left;
-    margin-right: 20px;
-  }
 
-  .align-right {
-    float: right;
-    margin-left: 20px;
-  }
   .slide-in {
     opacity: 0;
   }
